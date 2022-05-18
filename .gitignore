@@ -4,6 +4,3 @@ Scripts
 venv
 pyvenv.cfg
 db.sqlite3
-.env
-requirements-dev.txt
-requirements.txt
