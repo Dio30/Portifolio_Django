@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        <a href="{% url 'games_list' %}">Para voltar a lista</a>
+    </div>
+
+    <div class="col-sm">
+        <h1>Bem Vindo</h1>
+    </div>
+
+    <div class="col-sm">
+        {% if user.is_authenticated %}
+            <p>Olá {{ user.username }} </p>
+            <a href="{% url 'logout' %}" class="btn btn-warning" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+        {% endif %}
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
+        </div>
+    </footer>
+{% endblock %}

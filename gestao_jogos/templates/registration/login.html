@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+        <h1>Login</h1><br>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|bootstrap }}<br>
+                <button type="submit" class="btn btn-info">Login</button>           
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
+        </div>
+    </footer>
+{% endblock %}

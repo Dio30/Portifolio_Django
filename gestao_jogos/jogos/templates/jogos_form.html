@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block title %} Inserir Jogos {% endblock %}
+
+{% block main %}
+    <h3><u>Novo Jogo</h3></u>
+
+    <div class="row">
+        <div class="col">
+    
+        </div>
+
+        <div class="col">
+    
+        </div>
+
+        <div class="col-x">
+            {% if user.is_authenticated %}
+
+                <p>Olá {{ user.username }} 
+                    <a href="{% url 'logout' %}" class="btn btn-info" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a>
+                </button></p>
+            
+            {% endif %}
+        </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="myform">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+    <br>
+
+<a href="{% url 'games_list' %}">Para voltar a lista</a>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
+        </div>
+    </footer>
+{% endblock %}

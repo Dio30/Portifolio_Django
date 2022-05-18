@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %} Jogos {% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        {% if user.is_authenticated %}
+
+        <p>Olá {{ user.username }} 
+            <a href="{% url 'logout' %}" class="btn btn-info" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></button></p>
+    
+        {% endif %}
+        
+    </div>
+    <div class="col-x">
+        <form action="">
+            <b><p class="dicas">Para realizar a sua busca digite o nome do jogo desejado.</p></b>
+            <b><p class="dicas">(Para ver a lista de jogos completa aperte na lupa novamente)</p></b>
+            <center><input type="text" name="pesquisa" placeholder="Digite seu jogo">
+            <button class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button></center>
+        </form>
+    </div>
+    <div class="col">
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+
+    </div>
+
+    <div class="col">
+        <br><u><h2>Lista de Jogos</h2></u><br>
+        
+        <table class="table table-bordered table-hover">
+            <thead class="thead">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do Jogo</th>
+                    <th>Tipo de Jogo</th>
+                    <th>Preço do Jogo</th>
+                    <th>Descrição do Jogo</th>
+                    <th>Editar Jogo</th>
+                    <th>Deletar Jogo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% if games %}  
+            {% for i in games %}
+                <tr class="meusjogos">
+                    <td>Nº {{i.id}}</td>
+                    <td>{{i.nome_do_jogo}}</td>
+                    <td>{{i.tipo_de_jogo}}</td>
+                    <td>R$ {{i.preço_do_jogo}}</td>
+                    <td>{{i.descrição_do_jogo}}</td>
+                    <td><a href="{% url 'games_update' i.id %}" class="btn btn-warning">Editar</a></td>
+                    <td><a href="{% url 'games_delete' i.id %}" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+              
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+        
+        <br>
+
+        <center><a href="{% url 'games_new' %}" class="btn btn-primary">Novo Jogo</a></center><br>
+
+    </div>
+
+    <div class="col-sm">
+       
+    </div>
+</div>
+
+<br>
+
+<a href="{% url 'home' %}" class="refresh_list">Para voltar a pagina inicial</a>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
+        </div>
+    </footer>
+{% endblock %}
