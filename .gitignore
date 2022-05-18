@@ -1,6 +1,9 @@
-
 Lib
 Scripts
 venv
 pyvenv.cfg
+.idea
+*pyc
 db.sqlite3
+.env
+.DS_Store
