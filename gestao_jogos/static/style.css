@@ -1,6 +1,9 @@
-@media only screen and (max-device-width: 900px){
-    .table-bordered {width: 600px;}
-    .jumbotron {width: 600px;}
+@media only screen and (max-device-width: 1080px){
+    .container {width: 400px; margin: 0 auto;}
+}
+
+body{
+    background-color: rgb(175, 174, 174);
 }
 
 h2{
@@ -22,7 +25,8 @@ h3{
 .myform{
     color: rgb(3, 3, 3);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 90%;
+    font-size: 95%;
+    width: 100%;
 }
 
 .thead{
@@ -31,7 +35,6 @@ h3{
     background-color: black;
     color: #ddd;
     text-align: center;
-    max-width: 900px;
 }
 
 .meusjogos{
@@ -40,15 +43,14 @@ h3{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(28, 137, 137);
-    max-width: 900px;
 }
 
 .btn-primary{
-    padding: 5px 2%;
+    padding: 6px 2%;
 }
 
 .dicas{
-    font-size: 110%;
+    font-size: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: red;
 }
@@ -56,4 +58,12 @@ h3{
 .refresh_list{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0 auto;
+}
+
+.btn-warning{
+    padding: 4px 5%;
+}
+
+.btn-danger{
+    padding: 4px 10%;
 }

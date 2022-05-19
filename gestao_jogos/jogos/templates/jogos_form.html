@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col">
-    
+            <a href="{% url 'games_list' %}" class="refresh_list">Para voltar para a lista</a>
         </div>
 
         <div class="col">
@@ -33,16 +33,4 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 
-    <br>
-
-<a href="{% url 'games_list' %}">Para voltar a lista</a>
-
-{% endblock %}
-
-{% block footer %}
-    <footer class="footer">
-        <div class="container">
-            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
-        </div>
-    </footer>
 {% endblock %}
