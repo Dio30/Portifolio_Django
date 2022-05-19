@@ -1,12 +1,15 @@
-@media screen and (max-width: 1080px){
-    .container {max-width: 100%; padding: auto;}
-    .jumbotron {max-width: 100%; padding: auto;}
-    .table-bordered {max-width: 100%; max-height: 100%; padding: auto;
-        margin-bottom: 15px;
-        overflow-y: hidden;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        border: 1px solid rgb(255, 255, 255);}
+*{margin:0; padding: 0; box-sizing: border-box;}
+@media screen and (max-width: 480px){
+    .table-bordered {width: 94%}
+    .thead {display:flex}
+    .jumbotron {width: 200%}
 }
+
+@media only screen and (min-width: 1200px){
+    .table-bordered {width: 100%;};
+    .jumbotron {width: 200%};
+}
+
 h2{
     color: rgb(7, 7, 7);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -27,25 +30,24 @@ h3{
     color: rgb(3, 3, 3);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 90%;
-    padding: auto;
 }
 
 .thead{
     font-size: 80%;
-    padding: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
     color: #ddd;
     text-align: center;
+    max-width: 900px;
 }
 
 .meusjogos{
     font-size: 85%;
     color: black;
-    padding: auto;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(28, 137, 137);
+    max-width: 900px;
 }
 
 .btn-primary{
@@ -61,5 +63,4 @@ h3{
 .refresh_list{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0 auto;
-    padding: auto;
 }
