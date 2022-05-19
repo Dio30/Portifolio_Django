@@ -1,14 +1,6 @@
-*{margin:0; padding: 0; box-sizing: border-box;}
-@media screen and (max-width: 480px){
-    .table-bordered {width: 94%}
-    .thead {display:flex}
-    .meusjogos {display:flex}
-    .jumbotron {width: 100%}
-}
-
-@media only screen and (min-width: 1200px){
-    .table-bordered {width: 100%;};
-    .jumbotron {width: 100%};
+@media only screen and (max-device-width: 900px){
+    .table-bordered {width: 600px;}
+    .jumbotron {width: 600px;}
 }
 
 h2{
