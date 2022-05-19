@@ -2,12 +2,13 @@
 @media screen and (max-width: 480px){
     .table-bordered {width: 94%}
     .thead {display:flex}
-    .jumbotron {width: 200%}
+    .meusjogos {display:flex}
+    .jumbotron {width: 100%}
 }
 
 @media only screen and (min-width: 1200px){
     .table-bordered {width: 100%;};
-    .jumbotron {width: 200%};
+    .jumbotron {width: 100%};
 }
 
 h2{
