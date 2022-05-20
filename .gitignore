@@ -7,3 +7,4 @@ pyvenv.cfg
 db.sqlite3
 .env
 .DS_Store
+.vscode

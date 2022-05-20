@@ -2,16 +2,17 @@
 
 {% load bootstrap %}
 
-{% block title %} Login {% endblock %}
+{% block title %} Cadastrar Novo Usuario {% endblock %}
 
 {% block main %}
-        <h1>Login</h1><br>
+        <h1>Cadastro</h1><br>
             <form method="POST">
                 {% csrf_token %}
                 {{ form|bootstrap }}<br>
-                <button type="submit" class="btn btn-info">Login</button><br>
-                <br><br>
-                <center><a href="{% url 'signup' %}" class="refresh_list">Para fazer um novo cadastro</a></center>   
+                <button type="submit" class="btn btn-info">Cadastrar</button><br>
+                <br>
+                <center><a href="{% url 'login' %}" class="refresh_list">Se já está cadastrado clique aqui</a></center>  
+
 
 {% endblock %}
 
