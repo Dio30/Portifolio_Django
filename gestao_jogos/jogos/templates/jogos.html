@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block title %} Jogos {% endblock %}
 
@@ -55,7 +56,7 @@
                     <td>Nº {{i.id}}</td>
                     <td>{{i.nome_do_jogo}}</td>
                     <td>{{i.tipo_de_jogo}}</td>
-                    <td>R$ {{i.preço_do_jogo}}</td>
+                    <td>R$ {{i.preço_do_jogo|intcomma}}</td>
                     <td>{{i.descrição_do_jogo}}</td>
                     <td><a href="{% url 'games_update' i.id %}" class="btn btn-warning">Editar</a></td>
                     <td><a href="{% url 'games_delete' i.id %}" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>

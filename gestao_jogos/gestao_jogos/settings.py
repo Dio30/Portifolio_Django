@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'bootstrapform',    
     'jogos',
     'home',
     'static',
     'usuarios',
-    'rolepermissions'
+    'rolepermissions',
 ]
 
 MIDDLEWARE = [
