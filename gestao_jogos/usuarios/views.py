@@ -11,10 +11,10 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Usuario cadastrado com sucesso" )
-			return redirect("login.html")
+			return redirect("login")
 		messages.error(request, "Cadastro preenchido incorretamente, Tente novamente. ")
 	form = NewUserForm()
-	return render (request=request, template_name="register.html", context={"register_form":form})
+	return render (request, template_name="register.html", context={"register_form":form})
 
 def login_request(request):
 	if request.method == "POST":
