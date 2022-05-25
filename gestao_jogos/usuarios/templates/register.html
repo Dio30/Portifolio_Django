@@ -5,15 +5,17 @@
 {% block title %} Cadastrar Novo Usuario {% endblock %}
 
 {% block main %}
+{% include 'mensagens.html' %}
+
         <h1>Cadastro</h1><br>
             <form method="POST">
                 {% csrf_token %}
-                {{ form|bootstrap }}<br>
+                {{ register_form|bootstrap }}<br>
                 <button type="submit" class="btn btn-info">Cadastrar</button><br>
                 <br>
-                <center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center>  
-
-
+                <center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center>
+            </form>
+        
 {% endblock %}
 
 {% block footer %}

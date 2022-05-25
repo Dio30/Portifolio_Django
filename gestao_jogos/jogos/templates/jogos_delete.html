@@ -6,6 +6,8 @@
 
 {% block main %}
 
+{% include 'mensagens.html' %}
+
     <h1>Tem certeza que deseja deletar {{ delete.nome_do_jogo }} ?</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}

@@ -13,6 +13,16 @@ import os
 from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
+from django.contrib.messages import constants as messages
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,12 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'bootstrapform',    
+    
+    #meus apps:
+    'bootstrapform',
     'jogos',
     'home',
     'static',
     'usuarios',
-    'rolepermissions',
 ]
 
 MIDDLEWARE = [
@@ -128,8 +139,8 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = 'games_list'
 
-LOGOUT_URL = '/sair/'
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_URL = '/logout/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 STATICFILES_DIRS = [
     BASE_DIR /'static',
@@ -142,5 +153,3 @@ MEDIA_ROOT = 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-ROLEPERMISSIONS_MODULE = "usuarios.roles"

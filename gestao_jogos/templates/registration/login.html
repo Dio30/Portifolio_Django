@@ -5,14 +5,19 @@
 {% block title %} Login {% endblock %}
 
 {% block main %}
-        <h1>Login</h1><br>
-            <form method="POST">
-                {% csrf_token %}
-                {{ form|bootstrap }}<br>
-                <button type="submit" class="btn btn-info">Login</button><br>
-                <br><br>
-                <center><a href="{% url 'cadastrar' %}" class="btn btn-primary">Novo Cadastro</a></center>   
 
+{% include 'mensagens.html' %}
+
+<center><h1>Login</h1></center><br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ login_form|bootstrap }}
+        <br>
+        <button type="submit" class="btn btn-info">Login</button><br>
+        <br><br>
+    </form>       
+        <center><a href="{% url 'cadastro' %}" class="btn btn-primary">Novo Cadastro</a></center>   
+        
 {% endblock %}
 
 {% block footer %}
