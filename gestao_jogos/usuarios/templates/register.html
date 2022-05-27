@@ -9,11 +9,11 @@
 {% include 'mensagens.html' %}
 
         <h1>Cadastro</h1><br>
-            <form method="POST">
+            <form method="POST" action="{% url 'cadastro' %}">
                 {% csrf_token %}
                 {{ register_form|bootstrap }}<br>
                 <button type="submit" class="btn btn-info">Cadastrar</button><br>
-                <br>
+                
                 <center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center>
             </form>
         
@@ -22,7 +22,7 @@
 {% block footer %}
     <footer class="footer">
         <div class="container">
-            <center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
+            <br><center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
         </div>
     </footer>
 {% endblock %}

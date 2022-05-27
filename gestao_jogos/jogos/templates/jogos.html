@@ -7,6 +7,8 @@
 
 {% include 'mensagens.html' %}
 
+
+
 <div class="row">
     <div class="col">
     
@@ -41,6 +43,7 @@
         <table class="table table-bordered table-hover">
             <thead class="thead">
                 <tr>
+                    
                     <th>Código</th>
                     <th>Nome do Jogo</th>
                     <th>Tipo de Jogo</th>
@@ -52,6 +55,7 @@
             </thead>
 
             <tbody>
+            
             {% if games %}  
             {% for i in games %}
                 <tr class="meusjogos">
@@ -63,7 +67,6 @@
                     <td><a href="{% url 'games_update' i.id %}" class="btn btn-warning">Editar</a></td>
                     <td><a href="{% url 'games_delete' i.id %}" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
                 </tr>
-              
             {% endfor %}
             {% endif %}
             </tbody>
@@ -82,12 +85,14 @@
 
 <br>
 
-<a href="{% url 'home' %}" class="refresh_list">Para voltar a pagina inicial</a>
+<a href="{% url 'home' %}" class="refresh_list">Para voltar a pagina inicial</a><br>
 
 {% endblock %}
 
 {% block footer %}
     <footer class="footer">
-        <span class="text-muted">Desenvolvido por Dione Rafael Padilha</span>
+        <div class="container-fixed">
+            <fixed><center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center></fixed>
+        </div>
     </footer>
 {% endblock %}

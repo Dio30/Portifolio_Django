@@ -5,8 +5,7 @@ from home import urls as home_urls
 from jogos import urls as jogos_urls
 from django.conf import settings
 from django.conf.urls.static import static
-from usuarios.views import register_request, login_request
-from django.contrib.auth.views import LogoutView
+from usuarios.views import register_request, login_request, logout_request
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,7 +13,7 @@ urlpatterns = [
     path('jogos/', include(jogos_urls)),
     path('registrar/', register_request, name='cadastro'),
     path('login/', login_request, name='login'),
-    path('logout/', LogoutView.as_view(), name='logout'),
+    path('logout/', logout_request, name='logout'),
 ]
 
 if settings.DEBUG:

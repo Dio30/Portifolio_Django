@@ -9,14 +9,14 @@
 {% include 'mensagens.html' %}
 
 <center><h1>Login</h1></center><br>
-    <form method="POST" action="">
+    <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{ login_form|bootstrap }}
         <br>
         <button type="submit" class="btn btn-info">Login</button><br>
         <br><br>
     </form>       
-        <center><a href="{% url 'cadastro' %}" class="btn btn-primary">Novo Cadastro</a></center>   
+        <br><br><p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}">Crie uma conta aqui</a>.</p>  
         
 {% endblock %}
 
