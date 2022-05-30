@@ -13,16 +13,7 @@
                 {% csrf_token %}
                 {{ register_form|bootstrap }}<br>
                 <button type="submit" class="btn btn-info">Cadastrar</button><br>
-                
-                <center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center>
+                <br><center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center><br><br>
             </form>
         
-{% endblock %}
-
-{% block footer %}
-    <footer class="footer">
-        <div class="container">
-            <br><center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center>
-        </div>
-    </footer>
 {% endblock %}

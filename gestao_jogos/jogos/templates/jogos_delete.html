@@ -11,7 +11,7 @@
     <h1>Tem certeza que deseja deletar {{ delete.nome_do_jogo }} ?</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit" class="btn btn-dark" onclick="return confirm('Tem certeza que deseja deletar?')">Delete</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar?')">Delete</button>
     </form>
 
     <br>

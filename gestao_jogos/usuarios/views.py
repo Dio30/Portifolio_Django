@@ -2,19 +2,21 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import redirect, render
-from .forms import NewUserForm
-from django.contrib import auth
+from .forms import UsuariosForm
+from django.contrib.auth.models import Group
 
 def register_request(request):
     if request.method == "POST":
-        form = NewUserForm(request.POST)
+        form = UsuariosForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            messages.success(request, "Usuario cadastrado com sucesso" )
+            group = Group.objects.get(name='Clientes')
+            user.groups.add(group)
+            username = form.cleaned_data.get('username')
+            messages.success(request, f"Usuario cadastrado com sucesso por {username}")
             return redirect("login")
-        messages.error(request, "Cadastro preenchido incorretamente ou esse usuario já existe, tente novamente. ")
-    form = NewUserForm()
+        messages.error(request, "Algum dado foi preenchido incorretamente, tente novamente.")     
+    form = UsuariosForm()
     return render (request, template_name="register.html", context={"register_form":form})
 
 def login_request(request):
@@ -25,7 +27,7 @@ def login_request(request):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                auth.login(request, user)
+                login(request, user)
                 messages.info(request, f"Voce está logado como {username}.")
                 return redirect("/")
             else:

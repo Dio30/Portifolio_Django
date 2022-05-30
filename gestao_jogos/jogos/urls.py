@@ -1,8 +1,5 @@
 from django.urls import path
-from .views import games_list
-from .views import games_new
-from .views import games_update
-from .views import games_delete
+from .views import games_list, games_new, games_update, games_delete
 
 urlpatterns = [
     path('lista/', games_list, name='games_list'),

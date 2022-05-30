@@ -43,7 +43,6 @@
         <table class="table table-bordered table-hover">
             <thead class="thead">
                 <tr>
-                    
                     <th>Código</th>
                     <th>Nome do Jogo</th>
                     <th>Tipo de Jogo</th>
@@ -53,10 +52,8 @@
                     <th>Deletar Jogo</th>
                 </tr>
             </thead>
-
             <tbody>
-            
-            {% if games %}  
+            {% if user.is_authenticated and games %}
             {% for i in games %}
                 <tr class="meusjogos">
                     <td>Nº {{i.id}}</td>
@@ -83,16 +80,6 @@
     </div>
 </div>
 
-<br>
-
 <a href="{% url 'home' %}" class="refresh_list">Para voltar a pagina inicial</a><br>
 
-{% endblock %}
-
-{% block footer %}
-    <footer class="footer">
-        <div class="container-fixed">
-            <fixed><center><span class="text-muted">Desenvolvido por Dione Rafael Padilha</span></center></fixed>
-        </div>
-    </footer>
 {% endblock %}
